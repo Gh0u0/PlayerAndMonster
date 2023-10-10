@@ -25,13 +25,13 @@ public class Monster extends Creature implements AttackMechanic {
 
     @Override
     public int takeDamage(int amount) {
-        amount = damage;
+        this.damage = amount;
         hp -= amount;
         return amount;
     }
 
     public void attackEnemy(Player target) {
-        damage = random.nextInt(6) + 1;
+        int damage = random.nextInt(6) + 1;
         int damageTaken = target.takeDamage(damage);
         System.out.printf("Монстр нанес игроку %d ед. урона \n", damageTaken);
     }

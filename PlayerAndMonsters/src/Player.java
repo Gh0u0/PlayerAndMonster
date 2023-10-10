@@ -26,14 +26,14 @@ public class Player extends Creature implements AttackMechanic {
 
     @Override
     public int takeDamage(int amount) {
-        amount = damage;
+        this.damage = amount;
         hp -= amount;
         return amount;
     }
 
 
     public void attackEnemy(Monster target) {
-        damage = random.nextInt(6) + 1;
+        int damage = random.nextInt(6) + 1;
         int damageTaken = target.takeDamage(damage);
         System.out.printf("Игрок нанес монстру %d ед. урона \n", damageTaken);
     }
@@ -50,7 +50,7 @@ public class Player extends Creature implements AttackMechanic {
             System.out.printf("Вы излечили себя на %d ед. здоровья \n", heal);
             healCounter --;
         } else {
-            System.out.println("Вы попытались сделать глоток зелья, но на дне бутылки оказалось пусто.\n Монстр воспользовался моментом чтобы ударить.");
+            System.out.println("Вы попытались сделать глоток зелья, но на дне бутылки оказалось пусто.\nМонстр воспользовался моментом чтобы ударить.");
         }
     }
 

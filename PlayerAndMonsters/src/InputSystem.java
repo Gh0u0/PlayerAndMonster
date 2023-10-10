@@ -12,7 +12,7 @@ public class InputSystem {
                 val = scanner.nextInt();
             } catch (InputMismatchException e) {
                 val = -1;
-                scanner.next(); // Consume invalid input to prevent an infinite loop
+                scanner.next();
             }
         } while (val < min || val > max);
         return val;
